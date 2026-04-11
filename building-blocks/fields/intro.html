@@ -52,3 +52,47 @@ id — String
 visibility — Array
 display_width — String
 alias_mapping — String
+
+
+
+{# Field groups #}
+ create an object with the type of "group". Then, include a children array to contain the fields you want to group together.
+
+ ex 
+
+ [
+  {
+    "id": "9c00985f-01db-ac5d-73f5-80ed6c0c7863",
+    "name": "my_text",
+    "display_width": null,
+    "label": "Text",
+    "required": true,
+    "locked": false,
+    "validation_regex": "",
+    "allow_new_line": false,
+    "show_emoji_picker": false,
+    "type": "text",
+    "default": "Add text here"
+  },
+  {  {# Group starts here #}  
+    "type": "group",
+    "name": "recipe_summary_group",
+    "label": "Recipe summary",
+    "expanded": true,
+    "inline_help_text": "Summarize the recipe (title and description)",
+    "children": [
+      {
+        "type": "text",
+        "label": "Recipe title",
+        "name": "recipe_title",
+        "placeholder": "Burrata salad"
+      },
+      {
+        "type": "text",
+        "label": "Recipe description",
+        "name": "recipe_description",
+        "placeholder": "fig mostarda, hazelnuts, arugula, vincotto, prosciutto, toasted sourdough"
+      }
+    ]
+  }
+]
